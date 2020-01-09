@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mikkelmbk/gulp-intro.git"
+    "url": "git+https://github.com/Lauritsen1/gulp-boilerplate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mikkelmbk/gulp-intro/issues"
+    "url": "https://github.com/Lauritsen1/gulp-boilerplate/issues"
   },
-  "homepage": "https://github.com/Mikkelmbk/gulp-intro#readme",
+  "homepage": "https://github.com/Lauritsen1/gulp-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",

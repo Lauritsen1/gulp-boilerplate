@@ -1,1 +1,7 @@
-# gulp-intro
+# @lauritsen/Gulp-boilerplate
+
+## Installation
+
+```
+npm i @lauritsen/gulp-boilerplate
+```

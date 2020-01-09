@@ -1,7 +1,7 @@
 {
-  "name": "gulp-intro",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@lauritsen/gulp-boilerplate",
+  "version": "0.1.0",
+  "description": "Super simple boilerplate for Gulp",
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/Lauritsen1/gulp-boilerplate.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Gulp", "sass", "pug", "imagemin", "babel", "boilerplate"],
+  "author": "Rasmus Lauritsen <rasmusllauritsen@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Lauritsen1/gulp-boilerplate/issues"

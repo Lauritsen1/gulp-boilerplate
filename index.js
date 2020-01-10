@@ -6,24 +6,26 @@ var TEMPLATE_DIR = path.join(__dirname, "pkg");
 var MODE_0666 = parseInt("0666", 8);
 
 if (!fs.existsSync("./package.json")) {
-	console.log("Please run <npm init> before you run this file");
-	process.exit(1);
+    console.log("Please run <npm init> before you run this file");
+    process.exit(1);
 }
 
 function copyFile(from, to) {
-	write(to, fs.readFileSync(path.join(TEMPLATE_DIR, from), 'utf-8'));
+    write(to, fs.readFileSync(path.join(TEMPLATE_DIR, from), 'utf-8'));
 }
 
-function copyFileMulti (fromDir, toDir) {
-	fs.readdirSync(path.join(TEMPLATE_DIR, fromDir))
-	.forEach(function(file) {
-		copyFile(path.join(fromDir, file), path.join(toDir, file));
-	});
+function copyFileMulti(fromDir, toDir) {
+    fs.readdirSync(path.join(TEMPLATE_DIR, fromDir))
+        .forEach(function (file) {
+            if (fs.lstatSync(path.join(TEMPLATE_DIR, fromDir, file)).isFile()) {
+                copyFile(path.join(fromDir, file), path.join(toDir, file));
+            }
+        });
 }
 
 function write(file, str, mode) {
-	fs.writeFileSync(file, str, {mode: mode || MODE_0666});
-	console.log('	\x1b[36mcreate\x1b[0m  : ' + file);
+    fs.writeFileSync(file, str, { mode: mode || MODE_0666 });
+    console.log('	\x1b[36mcreate\x1b[0m  : ' + file);
 }
 
 mkdir.sync("./tasks");
@@ -44,24 +46,24 @@ copyFileMulti("src/images", "./src/images");
 copyFileMulti("src/media", "./src/media");
 copyFile("gulpfile.js", "./gulpfile.js");
 
-var package = require("./package");
+// var package = require("./package");
 
-package.devDependencies = {
-	"@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-declare": "^0.3.0",
-    "gulp-imagemin": "^6.2.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^1.2.0",
-    "imagemin-jpeg-recompress": "^6.0.0"
-};
+// package.devDependencies = {
+// 	"@babel/core": "^7.7.7",
+//     "@babel/preset-env": "^7.7.7",
+//     "gulp": "^4.0.2",
+//     "gulp-babel": "^8.0.0",
+//     "gulp-clean-css": "^4.2.0",
+//     "gulp-concat": "^2.6.1",
+//     "gulp-connect": "^5.7.0",
+//     "gulp-declare": "^0.3.0",
+//     "gulp-imagemin": "^6.2.0",
+//     "gulp-pug": "^4.0.1",
+//     "gulp-rename": "^2.0.0",
+//     "gulp-sass": "^4.0.2",
+//     "gulp-sourcemaps": "^2.6.5",
+//     "gulp-terser": "^1.2.0",
+//     "imagemin-jpeg-recompress": "^6.0.0"
+// };
 
-write("./package.jsaon", package);
+// write("./package.jsaon", package);

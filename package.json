@@ -12,7 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/Lauritsen1/gulp-boilerplate.git"
   },
-  "keywords": ["Gulp", "sass", "pug", "imagemin", "babel", "boilerplate"],
+  "keywords": [
+    "Gulp",
+    "sass",
+    "pug",
+    "imagemin",
+    "babel",
+    "boilerplate"
+  ],
   "author": "Rasmus Lauritsen <rasmusllauritsen@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -36,5 +43,7 @@
     "gulp-terser": "^1.2.0",
     "imagemin-jpeg-recompress": "^6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
 }

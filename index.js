@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require('fs');
 var path = require("path");
 var mkdir = require("mkdirp");
@@ -57,7 +58,5 @@ exec("npm i -D @babel/core @babel/preset-env gulp gulp-babel gulp-clean-css gulp
 
     console.log("Installing NPM packages. Please Wait!");
 
-    stdout.on("data", function (data) {
-        console.log(data.toString());
-    });
+    console.log(stdout);
 });

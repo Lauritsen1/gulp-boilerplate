@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "Super simple boilerplate for Gulp",
   "main": "index.js",
+  "bin": {
+    "init": "./index.js"
+  },
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
